@@ -2,7 +2,6 @@ package org.ttrzcinski.fileext;
 
 import org.json.JSONObject;
 import org.ttrzcinski.fileext.interfaces.I2JSON;
-import org.ttrzcinski.fileext.utils.JSONOutput;
 import org.ttrzcinski.fileext.utils.ParamCheck;
 import org.ttrzcinski.fileext.utils.StringFix;
 

@@ -8,53 +8,67 @@ import java.io.File;
 import java.nio.file.Path;
 import java.util.List;
 
+/**
+ * Represents a single known mounted point of directories structure.
+ */
 public class Mount implements IPath {
 
-    private Path path;
+    /**
+     * Kept path of the directory.
+     */
+    private Path keptPath;
 
+    /**
+     * Hidden constructor - there is no point to initialize an instance.
+     */
     private Mount() { }
 
-    public Mount(@NotNull String path) {
-        this.path = Path.of(path);
+    /**
+     * Creates new instance with given path.
+     *
+     * @param path given path
+     */
+    public Mount(@NotNull final String path) {
+        this.keptPath = Path.of(path);
     }
 
     @Override
-    public Path getPath() {
-        return this.path;
+    public final Path getPath() {
+        return this.keptPath;
     }
 
     @Override
-    public List<File> getFiles() {
-        return FileExt.listFilesOf(this.path);
+    public final List<File> getFiles() {
+        return FileExt.listFilesOf(this.keptPath);
     }
 
     @Override
-    public List<File> getFiles(final String filter) {
-        return FileExt.listFilesOf(this.path, filter);
+    public final List<File> getFiles(final String filter) {
+        return FileExt.listFilesOf(this.keptPath, filter);
     }
 
     @Override
-    public List<File> getSubdirectories() {
-        return FileExt.listSubdirectoriesOf(this.path);
+    public final List<File> getSubdirectories() {
+        return FileExt.listSubdirectoriesOf(this.keptPath);
     }
 
     @Override
-    public List<File> getSubdirectories(String filter) {
-        return FileExt.listSubdirectoriesOf(this.path, filter);
+    public final List<File> getSubdirectories(final String filter) {
+        return FileExt.listSubdirectoriesOf(this.keptPath, filter);
     }
 
     @Override
-    public File create() {
-        return FileExt.create(this.path);
+    public final File create() {
+        return FileExt.create(this.keptPath);
     }
 
     @Override
-    public File remove() {
-        return FileExt.remove(this.path);
+    public final File remove() {
+        return FileExt.remove(this.keptPath);
     }
 
     @Override
-    public boolean exists() {
-        return FileExt.exists(this.path);
+    public final boolean exists() {
+        return FileExt.exists(this.keptPath);
     }
 }

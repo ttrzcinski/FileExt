@@ -1,15 +1,30 @@
 package org.ttrzcinski;
 
 import org.ttrzcinski.fileext.Mounts;
+import org.ttrzcinski.fileext.utils.OSInfo;
+import org.ttrzcinski.fileext.utils.StringFix;
 
-public class Main {
+/**
+ * REMOVE AFTER FINISH - Just class to run as application with arguments.
+ */
+public final class Main {
 
-    public static void main(String[] args) {
-        Mounts mounts = new Mounts.MountsBuilder()
-                .mount("all","./usr")
-                .mount("maven","./m2")
-                .unmount("maven")
-                .build();
+    /**
+     * Hidden constructor - there is not point to initialize an instance.
+     */
+    private Main() { }
+
+    /**
+     * REMOVE AFTER FINISH.
+     * to fix: "Uncommented main method found."
+     *
+     * Entry point to the application.
+     *
+     * @param args given application arguments
+     */
+    public static void main(final String[] args) {
+        Mounts mounts = Mounts.getInstance()
+                .withMount("mvn", "~/.m2");
         mounts.toConsole();
         System.out.println("---");
         System.out.println(mounts.toJSON());

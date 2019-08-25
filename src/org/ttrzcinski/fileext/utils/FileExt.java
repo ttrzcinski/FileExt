@@ -87,7 +87,7 @@ public class FileExt {
         List<File> results;
         if (simpleFilter.length() ==  0 || simpleFilter.equals("*.*")) {
             // no filter given or given for all
-            return listFilesOf(path);
+            results = listFilesOf(path);
         } else if (simpleFilter.startsWith("*.")
                 && simpleFilter.length() > 2) {
             // filter by extension
@@ -130,20 +130,25 @@ public class FileExt {
         if (simpleFilter.equals("*.*")) {
             // no filter at all
             results = listSubdirectoriesOf(path);
-        } else if (simpleFilter.startsWith("*.") && simpleFilter.length() > 2) {
+        } else if (simpleFilter.startsWith("*.")
+                && simpleFilter.length() > 2) {
             // filter by extension
             String ending = simpleFilter.substring(2);
             results = listSubdirectoriesOf(path).stream()
-                    .filter(file -> file.getName().endsWith(ending)).collect(Collectors.toList());
+                    .filter(file -> file.getName().endsWith(ending))
+                    .collect(Collectors.toList());
         } else if (simpleFilter.endsWith(".*") && simpleFilter.length() > 2) {
             // filter by name starting
-            String beginning = simpleFilter.substring(0, simpleFilter.length()-2);
+            String beginning = simpleFilter
+                    .substring(0, simpleFilter.length()-2);
             results = listSubdirectoriesOf(path).stream()
-                    .filter(file -> file.getName().startsWith(beginning)).collect(Collectors.toList());
+                    .filter(file -> file.getName().startsWith(beginning))
+                    .collect(Collectors.toList());
         } else {
             // contains
             results = listSubdirectoriesOf(path).stream()
-                    .filter(file -> file.getName().contains(simpleFilter)).collect(Collectors.toList());
+                    .filter(file -> file.getName().contains(simpleFilter))
+                    .collect(Collectors.toList());
         }
         return results;
     }

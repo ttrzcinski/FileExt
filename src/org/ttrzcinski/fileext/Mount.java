@@ -138,16 +138,6 @@ public final class Mount implements IPath {
     }
 
     /**
-     * Removes file kept in the path.
-     *
-     * @return handle to the file
-     */
-    @Override
-    public File remove() {
-        return FileExt.remove(this.keptPath);
-    }
-
-    /**
      * Checks, if file exists in kept path.
      *
      * @return true means it exists, false otherwise
@@ -155,5 +145,15 @@ public final class Mount implements IPath {
     @Override
     public boolean exists() {
         return FileExt.exists(this.keptPath);
+    }
+
+    /**
+     * Removes file kept in the path.
+     *
+     * @return handle to the file
+     */
+    @Override
+    public File remove() {
+        return FileExt.remove(this.keptPath);
     }
 }

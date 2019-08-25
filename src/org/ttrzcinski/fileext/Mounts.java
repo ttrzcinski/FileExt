@@ -136,7 +136,6 @@ public class Mounts implements I2JSON, I2Console, IMounting<Mount> {
 
     /**
      * Mounts given path with given name.
-     * *
      *
      * @param name given name
      * @param path mount's path
@@ -185,6 +184,11 @@ public class Mounts implements I2JSON, I2Console, IMounting<Mount> {
         return contains(fixed) ? mounts.get(fixed) : null;
     }
 
+    /**
+     * Returns map clone of kept mounts.
+     *
+     * @return map of mounts
+     */
     public static final Map<String, Mount> getAll() {
         return mounts.entrySet().stream()
                 .collect(Collectors.toMap(e -> e.getKey(), e -> e.getValue()));
@@ -197,7 +201,6 @@ public class Mounts implements I2JSON, I2Console, IMounting<Mount> {
         System.out.println("List of mounts:");
         mounts.forEach((key, value) -> System.out.printf("%s : %s%n", key, value));
     }
-
     /**
      * Returns set of kept Mounts as JSON set.
      *
@@ -210,4 +213,5 @@ public class Mounts implements I2JSON, I2Console, IMounting<Mount> {
                                 .getPath().toAbsolutePath().toString()));
         return new JSONObject(newMap).toString();
     }
+
 }

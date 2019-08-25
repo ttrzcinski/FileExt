@@ -6,7 +6,6 @@ import org.jetbrains.annotations.NotNull;
  * Keeps methods to fix String to common standard.
  */
 public final class StringFix {
-
     /**
      * Hidden constructor - there is no point to initialize an instance.
      */
@@ -34,7 +33,7 @@ public final class StringFix {
 
     /**
      * Adds empty spaces from left side to given string.
-     * 
+     *
      * @param given given string
      * @param wantedLength wanted length
      * @return extended string

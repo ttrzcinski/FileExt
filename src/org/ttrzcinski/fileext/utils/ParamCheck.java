@@ -4,9 +4,10 @@ import java.nio.file.InvalidPathException;
 import java.nio.file.Paths;
 import java.util.Set;
 import java.util.regex.Pattern;
+import java.util.Set;
 
 /**
- * Parameter (and argument) validation methods.
+ * Checks given parameters.
  */
 public final class ParamCheck {
 
@@ -38,6 +39,47 @@ public final class ParamCheck {
             }
             filePathPattern = Pattern.compile(pattern);
         }
+    }
+
+    /**
+     * Validates, if given path is a right directory path with regex.
+     *
+     * @param path given path
+     * @return true means, if is a right path, false otherwise
+     */
+    public static boolean isPath(final String path) {
+        // Check, if entered param has value
+        if (!isSet(path)) {
+            return false;
+        }
+        // Initialize pattern matcher
+        initFilePathPattern();
+        // Check if 2nd check as instance
+        return filePathPattern.matcher(path).matches() && isPathWithTry(path);
+    }
+
+    /**
+     * Checks, if given path is a valid file path with instance.
+     *
+     * @param path given path
+     * @return true means it's valid, false otherwise
+     */
+    public static final boolean isPathWithTry(final String path) {
+        boolean result = false;
+        if (!isSet(path)) { return result; }
+        final String fixedPath = path.trim().toLowerCase();
+        // Check, if it is a home or root
+        if (FIXED_PATHS.contains(fixedPath)) {
+            result = true;
+        } else {
+            try {
+                Paths.get(fixedPath);
+                result = true;
+            } catch (InvalidPathException | NullPointerException ex) {
+                result = false;
+            }
+        }
+        return result;
     }
 
     /**
@@ -106,86 +148,6 @@ public final class ParamCheck {
      */
     public static boolean isSet(final Object param) {
         return param != null;
-    }
-
-    /**
-     * Checks, if given value is positive.
-     *
-     * @param given given value
-     * @return true means it is, false otherwise
-     */
-    public static boolean isPositive(final int given) {
-        return given > -1;
-    }
-
-    /**
-     * Checks, if given value is in between given limits.
-     *
-     * @param given given value to check
-     * @param leftLimit left side limit
-     * @param rightLimit right side limit
-     * @return true means, if is between those two, false otherwise
-     */
-    public static boolean inBetween(final int given,
-                                    final int leftLimit,
-                                    final int rightLimit) {
-        return leftLimit <= given && given <= rightLimit;
-    }
-
-    /**
-     * Validates, if given string is run argument.
-     *
-     * @param given given argument
-     * @return true means it is, false otherwise
-     */
-    public static boolean isArgument(final String given) {
-        if (isSet(given)) {
-            final String passedValue = given.trim();
-            return passedValue.startsWith("-")
-                    && !passedValue.startsWith("---");
-        }
-        return false;
-    }
-
-    /**
-     * Validates, if given path is a right directory path with regex.
-     *
-     * @param path given path
-     * @return true means, if is a right path, false otherwise
-     */
-    public static boolean isPath(final String path) {
-        // Check, if entered param has value
-        if (!isSet(path)) {
-            return false;
-        }
-        // Initialize pattern matcher
-        initFilePathPattern();
-        // Check if 2nd check as instance
-        return filePathPattern.matcher(path).matches() && isPathWithTry(path);
-    }
-
-    /**
-     * Checks, if given path is a valid file path with instance.
-     *
-     * @param path given path
-     * @return true means it's valid, false otherwise
-     */
-    public static final boolean isPathWithTry(final String path) {
-        boolean result = false;
-        if (!isSet(path)) { return result; }
-        final String fixedPath = path.trim().toLowerCase();
-        // Check, if it is a home or root
-        if (FIXED_PATHS.contains(fixedPath)) {
-            result = true;
-        } else {
-            try {
-                Paths.get(fixedPath);
-                result = true;
-            } catch (InvalidPathException | NullPointerException ex) {
-                result = false;
-            }
-        }
-        return result;
     }
 
 }

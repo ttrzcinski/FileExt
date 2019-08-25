@@ -1,12 +1,56 @@
 package org.ttrzcinski.fileext.utils;
 
-public class StringFix {
+import org.jetbrains.annotations.NotNull;
 
-    public static String toNotNull(String given) {
+/**
+ * Keeps methods to fix String to common standard.
+ */
+public final class StringFix {
+
+    /**
+     * Hidden constructor - there is no point to initialize an instance.
+     */
+    private StringFix() { }
+
+    /**
+     * Fixed string to not-null initialized empty string, if is null.
+     *
+     * @param given given string to fix
+     * @return fixed string
+     */
+    public static String toNotNull(final String given) {
         return given == null || given.trim().length() == 0 ? "" : given.trim();
     }
 
-    public static String simple(String given) {
+    /**
+     * Simplifies string to trimmed and lowercase form.
+     *
+     * @param given given string to fix
+     * @return fixed string
+     */
+    public static String simple(final String given) {
         return toNotNull(given).toLowerCase();
+    }
+
+    /**
+     * Adds empty spaces from left side to given string.
+     * 
+     * @param given given string
+     * @param wantedLength wanted length
+     * @return extended string
+     */
+    public static String padRight(@NotNull final String given, final int wantedLength) {
+        return String.format(String.format("%%-%ds", wantedLength), given);
+    }
+
+    /**
+     * Adds empty spaces from left side to given string.
+     *
+     * @param given given string
+     * @param wantedLength wanted length
+     * @return extended string
+     */
+    public static String padLeft(@NotNull final String given, final int wantedLength) {
+        return String.format(String.format("%%%ds", wantedLength), given);
     }
 }

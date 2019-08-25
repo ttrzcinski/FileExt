@@ -1,7 +1,6 @@
 package org.ttrzcinski.fileext.utils;
 
-import org.ttrzcinski.fileext.utils.ParamCheck;
-import org.ttrzcinski.fileext.utils.StringFix;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.IOException;
@@ -112,21 +111,55 @@ public class FileExt {
         return file;
     }
 
+    /**
+     * Passed handle to the file.
+     *
+     * @param keptPath given path
+     * @return file, if path is right, null otherwise
+     */
+    public static File read(@NotNull final Path keptPath) {
+        return keptPath != null ? new File(keptPath.toAbsolutePath().toString()) : null;
+    }
+
+    /**
+     * Checks, if file exists under given path.
+     *
+     * @param path given path
+     * @return true means it exists, false otherwise
+     */
     public static boolean exists(Path path) {
         return new File(path.toString()).exists();
     }
 
+    /**
+     * Checks, if file exists under given path.
+     *
+     * @param file given path as file
+     * @return true means it exists, false otherwise
+     */
     public static boolean exists(File file) {
         return file.exists();
     }
 
+    /**
+     * Removes file with the path.
+     *
+     * @param path given path
+     * @return removed file
+     */
     public static File remove(Path path) {
         File file = new File(path.toString());
         return remove(file);
     }
 
+    /**
+     * Removes file with the path.
+     *
+     * @param file given path as file
+     * @return removed file
+     */
     public static File remove(File file) {
-        if (!file.exists()) {
+        if (file.exists()) {
             file.delete();
             return file;
         }

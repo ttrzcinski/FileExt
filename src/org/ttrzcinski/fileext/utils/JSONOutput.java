@@ -7,8 +7,17 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * Converts given instance to JSOn string.
+ */
 public class JSONOutput {
 
+    /**
+     * Converts HashMap with String and PAth to HashMap with String and String.
+     *
+     * @param map given HashMap with string and Path
+     * @return HashMap equivalent with String and String
+     */
     private Map<String, String> convertToHashMapStringString(final HashMap<String, Path> map) {
         Map<String,String> newMap = new HashMap<>();
         if (map != null && !map.isEmpty()) {
@@ -18,6 +27,12 @@ public class JSONOutput {
         return newMap;
     }
 
+    /**
+     * Serialize given HashMap to JSON string.
+     *
+     * @param map given HashMap
+     * @return JSON string equivalent
+     */
     public static String toJSON(final HashMap<String, Path> map) {
         return new JSONObject(map).toString();
     }

@@ -1,8 +1,6 @@
 package org.ttrzcinski.fileext.utils;
 
 import org.jetbrains.annotations.NotNull;
-import org.ttrzcinski.fileext.utils.ParamCheck;
-import org.ttrzcinski.fileext.utils.StringFix;
 
 import java.io.File;
 import java.io.IOException;

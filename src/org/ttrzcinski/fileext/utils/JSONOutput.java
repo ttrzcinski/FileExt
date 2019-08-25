@@ -18,11 +18,15 @@ public class JSONOutput {
      * @param map given HashMap with string and Path
      * @return HashMap equivalent with String and String
      */
-    private Map<String, String> convertToHashMapStringString(final HashMap<String, Path> map) {
+    private Map<String, String> convertToHashMapStringString(
+            final HashMap<String, Path> map) {
         Map<String,String> newMap = new HashMap<>();
         if (map != null && !map.isEmpty()) {
-            newMap = map.entrySet().stream()
-                    .collect(Collectors.toMap(Map.Entry::getKey, e -> e.getValue().toAbsolutePath().toString()));
+            newMap = map.entrySet().stream().collect(
+                            Collectors.toMap(
+                            Map.Entry::getKey,
+                            e -> e.getValue().toAbsolutePath().toString()
+                    ));
         }
         return newMap;
     }
@@ -33,7 +37,7 @@ public class JSONOutput {
      * @param map given HashMap
      * @return JSON string equivalent
      */
-    public static String toJSON(final HashMap<String, Path> map) {
+    public static String toJSON(final Map map) {
         return new JSONObject(map).toString();
     }
 }

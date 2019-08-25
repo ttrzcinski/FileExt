@@ -5,6 +5,7 @@ import org.json.JSONObject;
 import org.ttrzcinski.fileext.interfaces.I2Console;
 import org.ttrzcinski.fileext.interfaces.I2JSON;
 import org.ttrzcinski.fileext.interfaces.IMounting;
+import org.ttrzcinski.fileext.utils.JSONOutput;
 import org.ttrzcinski.fileext.utils.StringFix;
 
 import java.nio.file.Path;
@@ -96,6 +97,27 @@ public class Mounts implements I2JSON, I2Console, IMounting<Mount> {
     }
 
     /**
+     * Returns number of kept mounts.
+     *
+     * @return number of kept mounts
+     */
+    public int size() {
+        return mounts != null ? mounts.size() : 0;
+    }
+
+    /**
+     * Mounts given path with given name.
+     *
+     * @param name given name
+     * @param mount mount
+     * @return handle to the mounts
+     */
+    public Mounts withMount(@NotNull final String name, @NotNull final Mount mount) {
+        this.mount(name, mount);
+        return instance;
+    }
+
+    /**
      * Mounts given path with given name.
      *
      * @param name given name
@@ -127,7 +149,7 @@ public class Mounts implements I2JSON, I2Console, IMounting<Mount> {
      * @param mount mount's path
      */
     @Override
-    public void mount(@NotNull final String name,  @NotNull final Mount mount) {
+    public void mount(@NotNull final String name, final Mount mount) {
         String fixed = StringFix.simple(name);
         if (fixed.length() > 0 && mount != null) {
             mounts.put(name.toLowerCase(), mount);
@@ -207,11 +229,11 @@ public class Mounts implements I2JSON, I2Console, IMounting<Mount> {
      * @return JSON set with all kept mounts.
      */
     public final String toJSON() {
-        Map<String, String> newMap = mounts.entrySet().stream()
+        Map<String, String> map = mounts.entrySet().stream()
                 .collect(Collectors.toMap(
                         Map.Entry::getKey, e -> e.getValue()
                                 .getPath().toAbsolutePath().toString()));
-        return new JSONObject(newMap).toString();
+        return JSONOutput.toJSON(map);
     }
 
 }

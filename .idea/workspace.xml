@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eb383e86-9b1d-4575-8268-31a342df76a7" name="Default Changelist" comment="">
+    <list default="true" id="eb383e86-9b1d-4575-8268-31a342df76a7" name="Default Changelist" comment="Simplified Mounts.&#10;Changed Mount to Singleton.&#10;Removed builder from Mount.&#10;Remvoed usage of builder.">
+      <change afterPath="$PROJECT_DIR$/test/org/ttrzcinski/fileext/MountsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/org/ttrzcinski/fileext/utils/JSONOutputTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fileExt.iml" beforeDir="false" afterPath="$PROJECT_DIR$/fileExt.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/ttrzcinski/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/ttrzcinski/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/ttrzcinski/fileext/Mount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/ttrzcinski/fileext/Mount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/ttrzcinski/fileext/Mounts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/ttrzcinski/fileext/Mounts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/ttrzcinski/fileext/utils/FileExt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/ttrzcinski/fileext/utils/FileExt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/ttrzcinski/fileext/utils/JSONOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/ttrzcinski/fileext/utils/JSONOutput.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,12 +21,12 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="TestMe with JUnit5 &amp; Mockito" />
         <option value="package-info" />
         <option value="module-info" />
         <option value="Class" />
         <option value="Interface" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -63,6 +64,7 @@
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
       <recent name="org.ttrzcinski.fileext.utils" />
+      <recent name="org.ttrzcinski.fileext" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.ttrzcinski.fileext.utils" />
@@ -83,7 +85,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.JSONOutputTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="org.ttrzcinski.Main" />
       <module name="fileExt" />
@@ -94,22 +96,82 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in fileExt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JSONOutputTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fileExt" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.ttrzcinski.fileext.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.ttrzcinski.fileext.utils" />
+      <option name="MAIN_CLASS_NAME" value="org.ttrzcinski.fileext.utils.JSONOutputTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MountsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fileExt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.ttrzcinski.fileext.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.ttrzcinski.fileext" />
+      <option name="MAIN_CLASS_NAME" value="org.ttrzcinski.fileext.MountsTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MountsTest.getInstance_notNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fileExt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.ttrzcinski.fileext.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.ttrzcinski.fileext" />
+      <option name="MAIN_CLASS_NAME" value="org.ttrzcinski.fileext.MountsTest" />
+      <option name="METHOD_NAME" value="getInstance_notNull" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MountsTest.toJSON_empty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fileExt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.ttrzcinski.fileext.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.ttrzcinski.fileext" />
+      <option name="MAIN_CLASS_NAME" value="org.ttrzcinski.fileext.MountsTest" />
+      <option name="METHOD_NAME" value="toJSON_empty" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.All in fileExt" />
+      <item itemvalue="JUnit.MountsTest" />
+      <item itemvalue="JUnit.MountsTest.toJSON_empty" />
+      <item itemvalue="JUnit.MountsTest.getInstance_notNull" />
+      <item itemvalue="JUnit.JSONOutputTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.JSONOutputTest" />
+        <item itemvalue="JUnit.MountsTest" />
+        <item itemvalue="JUnit.MountsTest.getInstance_notNull" />
+        <item itemvalue="JUnit.MountsTest.toJSON_empty" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.All in fileExt" />
       </list>
     </recent_temporary>
   </component>
@@ -137,7 +199,21 @@
       <option name="project" value="LOCAL" />
       <updated>1566740995217</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Simplified Mounts.&#10;Changed Mount to Singleton.&#10;Removed builder from Mount.&#10;Remvoed usage of builder.">
+      <created>1566741217761</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1566741217761</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Simplified Mounts.&#10;Changed Mount to Singleton.&#10;Removed builder from Mount.&#10;Remvoed usage of builder.">
+      <created>1566741243705</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1566741243705</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,6 +234,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Adedd to StringFix pad methods.&#10;Simplified ParamCheck and added missing JavaDocs. &#10;Added package-info.&#10;Added OS checks in OSInfo.&#10;Extended JSONOutput with missing JavaDocs.&#10;Extended FileExt with missing JavaDocs." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adedd to StringFix pad methods.&#10;Simplified ParamCheck and added missing JavaDocs. &#10;Added package-info.&#10;Added OS checks in OSInfo.&#10;Extended JSONOutput with missing JavaDocs.&#10;Extended FileExt with missing JavaDocs." />
+    <MESSAGE value="Simplified Mounts.&#10;Changed Mount to Singleton.&#10;Removed builder from Mount.&#10;Remvoed usage of builder." />
+    <option name="LAST_COMMIT_MESSAGE" value="Simplified Mounts.&#10;Changed Mount to Singleton.&#10;Removed builder from Mount.&#10;Remvoed usage of builder." />
   </component>
 </project>

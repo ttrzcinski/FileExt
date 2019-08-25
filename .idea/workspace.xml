@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eb383e86-9b1d-4575-8268-31a342df76a7" name="Default Changelist" comment="" />
+    <list default="true" id="eb383e86-9b1d-4575-8268-31a342df76a7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fileExt.iml" beforeDir="false" afterPath="$PROJECT_DIR$/fileExt.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/ttrzcinski/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/ttrzcinski/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/ttrzcinski/fileext/Mount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/ttrzcinski/fileext/Mount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/ttrzcinski/fileext/Mounts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/ttrzcinski/fileext/Mounts.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,10 +22,15 @@
       <list>
         <option value="JUnit5 Test Class" />
         <option value="TestMe with JUnit5 &amp; Mockito" />
-        <option value="Interface" />
+        <option value="package-info" />
+        <option value="module-info" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
@@ -30,11 +41,14 @@
     <property name="Repository.Attach.Annotations" value="true" />
     <property name="Repository.Attach.JavaDocs" value="true" />
     <property name="Repository.Attach.Sources" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
+    <property name="last.edited.regexp" value="/home" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../vmodmust" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -116,9 +130,34 @@
       <workItem from="1566411602162" duration="6269000" />
       <workItem from="1566419181557" duration="2702000" />
     </task>
+    <task id="LOCAL-00001" summary="Adedd to StringFix pad methods.&#10;Simplified ParamCheck and added missing JavaDocs. &#10;Added package-info.&#10;Added OS checks in OSInfo.&#10;Extended JSONOutput with missing JavaDocs.&#10;Extended FileExt with missing JavaDocs.">
+      <created>1566740995217</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1566740995217</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Adedd to StringFix pad methods.&#10;Simplified ParamCheck and added missing JavaDocs. &#10;Added package-info.&#10;Added OS checks in OSInfo.&#10;Extended JSONOutput with missing JavaDocs.&#10;Extended FileExt with missing JavaDocs." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adedd to StringFix pad methods.&#10;Simplified ParamCheck and added missing JavaDocs. &#10;Added package-info.&#10;Added OS checks in OSInfo.&#10;Extended JSONOutput with missing JavaDocs.&#10;Extended FileExt with missing JavaDocs." />
   </component>
 </project>

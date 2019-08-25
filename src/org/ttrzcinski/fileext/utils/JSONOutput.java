@@ -9,6 +9,8 @@ import java.util.stream.Collectors;
 
 /**
  * Converts given instance to JSOn string.
+ *
+ * @author <a href="mailto:trzcinski.tomasz.1988@gmail.com">Tomasz T.</a>
  */
 public class JSONOutput {
 

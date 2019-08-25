@@ -4,6 +4,7 @@ package org.ttrzcinski.fileext.interfaces;
  * Adds methods to make it easier to work with many common collections.
  *
  * @param <T> passed type of collection
+ * @author <a href="mailto:trzcinski.tomasz.1988@gmail.com">Tomasz T.</a>
  */
 public interface IWithCollection<T> {
 

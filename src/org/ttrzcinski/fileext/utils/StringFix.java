@@ -4,6 +4,8 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * Keeps methods to fix String to common standard.
+ *
+ * @author <a href="mailto:trzcinski.tomasz.1988@gmail.com">Tomasz T.</a>
  */
 public final class StringFix {
     /**
@@ -18,7 +20,11 @@ public final class StringFix {
      * @return fixed string
      */
     public static String toNotNull(final String given) {
-        return given == null || given.trim().length() == 0 ? "" : given.trim();
+        if (given == null || given.trim().length() == 0) {
+            return "";
+        } else {
+            return given.trim();
+        }
     }
 
     /**
@@ -38,7 +44,8 @@ public final class StringFix {
      * @param wantedLength wanted length
      * @return extended string
      */
-    public static String padRight(@NotNull final String given, final int wantedLength) {
+    public static String padRight(@NotNull final String given,
+                                  final int wantedLength) {
         return String.format(String.format("%%-%ds", wantedLength), given);
     }
 
@@ -49,7 +56,8 @@ public final class StringFix {
      * @param wantedLength wanted length
      * @return extended string
      */
-    public static String padLeft(@NotNull final String given, final int wantedLength) {
+    public static String padLeft(@NotNull final String given,
+                                 final int wantedLength) {
         return String.format(String.format("%%%ds", wantedLength), given);
     }
 }

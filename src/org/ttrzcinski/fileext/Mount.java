@@ -10,8 +10,10 @@ import java.util.List;
 
 /**
  * Represents a single known mounted point of directories structure.
+ *
+ * @author <a href="mailto:trzcinski.tomasz.1988@gmail.com">Tomasz T.</a>
  */
-public class Mount implements IPath {
+public final class Mount implements IPath {
 
     /**
      * Kept path of the directory.
@@ -59,7 +61,8 @@ public class Mount implements IPath {
      * @param subdirectory subdirectory under given path
      * @return new instance
      */
-    public static Mount of(@NotNull final String path, @NotNull final  String subdirectory) {
+    public static Mount of(@NotNull final String path,
+                           @NotNull final String subdirectory) {
         return new Mount(Path.of(String.format("%s/%s", path, subdirectory)));
     }
 
@@ -69,7 +72,7 @@ public class Mount implements IPath {
      * @return kept path
      */
     @Override
-    public final Path getPath() {
+    public Path getPath() {
         return this.keptPath;
     }
 
@@ -79,7 +82,7 @@ public class Mount implements IPath {
      * @return list of files within this path
      */
     @Override
-    public final List<File> getFiles() {
+    public List<File> getFiles() {
         return FileExt.listFilesOf(this.keptPath);
     }
 
@@ -90,7 +93,7 @@ public class Mount implements IPath {
      * @return list of files, if found, empty list otherwise
      */
     @Override
-    public final List<File> getFiles(final String filter) {
+    public List<File> getFiles(final String filter) {
         return FileExt.listFilesOf(this.keptPath, filter);
     }
 
@@ -100,7 +103,7 @@ public class Mount implements IPath {
      * @return list of subdirectories, if found, empty list otherwise
      */
     @Override
-    public final List<File> getSubdirectories() {
+    public List<File> getSubdirectories() {
         return FileExt.listSubdirectoriesOf(this.keptPath);
     }
 
@@ -111,7 +114,7 @@ public class Mount implements IPath {
      * @return list of subdirectories, if found, empty list otherwise
      */
     @Override
-    public final List<File> getSubdirectories(final String filter) {
+    public List<File> getSubdirectories(final String filter) {
         return FileExt.listSubdirectoriesOf(this.keptPath, filter);
     }
 
@@ -121,7 +124,7 @@ public class Mount implements IPath {
      * @return handle to the file
      */
     @Override
-    public final File create() {
+    public File create() {
         return FileExt.create(this.keptPath);
     }
 
@@ -130,7 +133,7 @@ public class Mount implements IPath {
      *
      * @return handle to file
      */
-    public final File read() {
+    public File read() {
         return FileExt.read(this.keptPath);
     }
 
@@ -140,7 +143,7 @@ public class Mount implements IPath {
      * @return handle to the file
      */
     @Override
-    public final File remove() {
+    public File remove() {
         return FileExt.remove(this.keptPath);
     }
 
@@ -150,7 +153,7 @@ public class Mount implements IPath {
      * @return true means it exists, false otherwise
      */
     @Override
-    public final boolean exists() {
+    public boolean exists() {
         return FileExt.exists(this.keptPath);
     }
 }

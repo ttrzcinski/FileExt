@@ -4,10 +4,11 @@ import java.nio.file.InvalidPathException;
 import java.nio.file.Paths;
 import java.util.Set;
 import java.util.regex.Pattern;
-import java.util.Set;
 
 /**
  * Checks given parameters.
+ *
+ * @author <a href="mailto:trzcinski.tomasz.1988@gmail.com">Tomasz T.</a>
  */
 public final class ParamCheck {
 
@@ -52,10 +53,11 @@ public final class ParamCheck {
         if (!isSet(path)) {
             return false;
         }
+        String fixedPAth = path.trim();
         // Initialize pattern matcher
         initFilePathPattern();
         // Check if 2nd check as instance
-        return filePathPattern.matcher(path).matches() && isPathWithTry(path);
+        return filePathPattern.matcher(fixedPAth).matches() && isPathWithTry(fixedPAth);
     }
 
     /**
@@ -64,8 +66,8 @@ public final class ParamCheck {
      * @param path given path
      * @return true means it's valid, false otherwise
      */
-    public static final boolean isPathWithTry(final String path) {
-        boolean result = false;
+    public static boolean isPathWithTry(final String path) {
+        var result = false;
         if (!isSet(path)) { return result; }
         final String fixedPath = path.trim().toLowerCase();
         // Check, if it is a home or root
@@ -137,7 +139,10 @@ public final class ParamCheck {
      * @return true means is is set, false otherwise
      */
     public static boolean isSet(final String param) {
-        return param != null ? param.trim().length() > 0 : false;
+        if (param != null) {
+            return param.trim().length() > 0;
+        }
+        return false;
     }
 
     /**

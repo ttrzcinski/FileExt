@@ -11,18 +11,37 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * File (Util Methods) Extension.
+ *
+ * @author <a href="mailto:trzcinski.tomasz.1988@gmail.com">Tomasz T.</a>
+ */
 public class FileExt {
 
+    /**
+     * Lists file from path.
+     *
+     * @param path given path
+     * @return list of files
+     */
     public static List<File> listFilesOf(Path path) {
-        List<File> files = new ArrayList<>();
+        var files = new ArrayList<File>();
         try (DirectoryStream<Path> directoryStream = Files.newDirectoryStream(path)) {
             for (Path dirPath : directoryStream) {
                 files.add(new File(dirPath.toString()));
             }
-        } catch (IOException ex) {}
+        } catch (IOException ex) {
+            files = null;
+        }
         return files;
     }
 
+    /**
+     * Lists subdirectories from path.
+     *
+     * @param path given path
+     * @return list of subdirectories
+     */
     public static List<File> listSubdirectoriesOf(Path path) {
         List<File> subdirectories = new ArrayList<>();
         try (DirectoryStream<Path> directoryStream = Files.newDirectoryStream(path)) {
@@ -30,10 +49,18 @@ public class FileExt {
                 var file = new File(dirPath.toString());
                 if (file.isDirectory()) subdirectories.add(file);
             }
-        } catch (IOException ex) {}
+        } catch (IOException ex) {
+            subdirectories = null;
+        }
         return subdirectories;
     }
 
+    /**
+     * Lists of only files from path.
+     *
+     * @param path given path
+     * @return list of only files
+     */
     public static List<File> listOnlyFilesOf(Path path) {
         List<File> onlyFiles = new ArrayList<>();
         try (DirectoryStream<Path> directoryStream = Files.newDirectoryStream(path)) {
@@ -41,46 +68,68 @@ public class FileExt {
                 var file = new File(dirPath.toString());
                 if (file.isFile()) onlyFiles.add(file);
             }
-        } catch (IOException ex) {}
+        } catch (IOException ex) {
+            onlyFiles = null;
+        }
         return onlyFiles;
     }
 
-    public static List<File> listFilesOf(final Path path, final String filter) {
-        if (!ParamCheck.isSet(filter)) return listFilesOf(path);
+    /**
+     * Lists of files from path filtered by given filter.
+     *
+     * @param path given path
+     * @param filter given filter
+     * @return filtered list of files
+     */
+    public static List<File> listFilesOf(@NotNull final Path path,
+                                         @NotNull final String filter) {
         String simpleFilter = StringFix.simple(filter);
-
         List<File> results;
-
-        if (simpleFilter.equals("*.*")) {
-            // no filter at all
+        if (simpleFilter.length() ==  0 || simpleFilter.equals("*.*")) {
+            // no filter given or given for all
             return listFilesOf(path);
-        } else if (simpleFilter.startsWith("*.") && simpleFilter.length() > 2) {
+        } else if (simpleFilter.startsWith("*.")
+                && simpleFilter.length() > 2) {
             // filter by extension
             String ending = simpleFilter.substring(2);
             results = listFilesOf(path).stream()
-                    .filter(file -> file.getName().endsWith(ending)).collect(Collectors.toList());
-        } else if (simpleFilter.endsWith(".*") && simpleFilter.length() > 2) {
+                    .filter(file -> file.getName().endsWith(ending))
+                    .collect(Collectors.toList());
+        } else if (simpleFilter.endsWith(".*")
+                && simpleFilter.length() > 2) {
             // filter by name starting
-            String beginning = simpleFilter.substring(0, simpleFilter.length()-2);
+            String beginning = simpleFilter.
+                    substring(0, simpleFilter.length()-2);
             results = listFilesOf(path).stream()
-                    .filter(file -> file.getName().startsWith(beginning)).collect(Collectors.toList());
+                    .filter(file -> file.getName().startsWith(beginning))
+                    .collect(Collectors.toList());
         } else {
             // contains
             results = listFilesOf(path).stream()
-                    .filter(file -> file.getName().contains(simpleFilter)).collect(Collectors.toList());
+                    .filter(file -> file.getName().contains(simpleFilter))
+                    .collect(Collectors.toList());
         }
         return results;
     }
 
-    public static List<File> listSubdirectoriesOf(final Path path, final String filter) {
-        if (!ParamCheck.isSet(filter)) return listSubdirectoriesOf(path);
+    /**
+     * Lists of subdirectories from path filtered by given filter.
+     *
+     * @param path given path
+     * @param filter given filter
+     * @return filtered list of subdirectories
+     */
+    public static List<File> listSubdirectoriesOf(final Path path,
+                                                  final String filter) {
+        if (!ParamCheck.isSet(filter)) {
+            return listSubdirectoriesOf(path);
+        }
         String simpleFilter = StringFix.simple(filter);
 
-        List<File> results;
-
+        final List<File> results;
         if (simpleFilter.equals("*.*")) {
             // no filter at all
-            return listSubdirectoriesOf(path);
+            results = listSubdirectoriesOf(path);
         } else if (simpleFilter.startsWith("*.") && simpleFilter.length() > 2) {
             // filter by extension
             String ending = simpleFilter.substring(2);
@@ -99,13 +148,19 @@ public class FileExt {
         return results;
     }
 
+    /**
+     * Creates file on pointed path.
+     *
+     * @param path given path
+     * @return handle to the file
+     */
     public static File create(Path path) {
         File file = new File(path.toString());
         if (!file.exists()) {
             try {
                 file.createNewFile();
             } catch (IOException e) {
-                return null;
+                file = null;
             }
         }
         return file;

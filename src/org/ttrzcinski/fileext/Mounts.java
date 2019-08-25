@@ -1,7 +1,6 @@
 package org.ttrzcinski.fileext;
 
 import org.jetbrains.annotations.NotNull;
-import org.json.JSONObject;
 import org.ttrzcinski.fileext.interfaces.I2Console;
 import org.ttrzcinski.fileext.interfaces.I2JSON;
 import org.ttrzcinski.fileext.interfaces.IMounting;
@@ -16,6 +15,8 @@ import java.util.stream.Collectors;
 
 /**
  * Keeps all known mounted paths and methods to operate on the collection.
+ *
+ * @author <a href="mailto:trzcinski.tomasz.1988@gmail.com">Tomasz T.</a>
  */
 public class Mounts implements I2JSON, I2Console, IMounting<Mount> {
 
@@ -112,7 +113,8 @@ public class Mounts implements I2JSON, I2Console, IMounting<Mount> {
      * @param mount mount
      * @return handle to the mounts
      */
-    public Mounts withMount(@NotNull final String name, @NotNull final Mount mount) {
+    public Mounts withMount(@NotNull final String name,
+                            @NotNull final Mount mount) {
         this.mount(name, mount);
         return instance;
     }
@@ -124,7 +126,8 @@ public class Mounts implements I2JSON, I2Console, IMounting<Mount> {
      * @param path mount's path
      * @return handle to the mounts
      */
-    public Mounts withMount(@NotNull final String name, @NotNull final Path path) {
+    public Mounts withMount(@NotNull final String name,
+                            @NotNull final Path path) {
         this.mount(name, path);
         return instance;
     }
@@ -213,7 +216,9 @@ public class Mounts implements I2JSON, I2Console, IMounting<Mount> {
      */
     public static final Map<String, Mount> getAll() {
         return mounts.entrySet().stream()
-                .collect(Collectors.toMap(e -> e.getKey(), e -> e.getValue()));
+                .collect(
+                        Collectors.toMap(e -> e.getKey(), e -> e.getValue())
+                );
     }
 
     /**

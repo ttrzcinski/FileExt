@@ -45,7 +45,7 @@ class ParamCheckTest {
     @Test
     void isPath_withTrimToGood() {
         // Arrange
-        String testObject = "  /home  ";
+        String testObject = OSInfo.isNix() ? "  /home  " : "  C:\\home  ";
 
         // Act
         boolean result = ParamCheck.isPath(testObject);
@@ -55,9 +55,9 @@ class ParamCheckTest {
     }
 
     @Test
-    void isPath_withGood() {
+    void isPath_withGoodNixPath() {
         // Arrange
-        String testObject = "/home";
+        String testObject = OSInfo.isNix() ? "/home" : "C:\\home";
 
         // Act
         boolean result = ParamCheck.isPath(testObject);

@@ -4,6 +4,7 @@ package org.ttrzcinski.fileext.interfaces;
  * Interface for accessing collection with mount(upsert) and unmount(remove).
  *
  * @param <T> passed object as value type
+ * @author <a href="mailto:trzcinski.tomasz.1988@gmail.com">Tomasz T.</a>
  */
 public interface IMounting<T> {
 
@@ -16,7 +17,7 @@ public interface IMounting<T> {
     void mount(String key, T value);
 
     /**
-     * Removes value with given key
+     * Removes value with given key.
      *
      * @param key passed key
      */

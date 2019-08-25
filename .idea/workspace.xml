@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eb383e86-9b1d-4575-8268-31a342df76a7" name="Default Changelist" comment="">
+    <list default="true" id="eb383e86-9b1d-4575-8268-31a342df76a7" name="Default Changelist" comment="Ignored out catalog.">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/ttrzcinski/fileext/Mount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/ttrzcinski/fileext/Mount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/ttrzcinski/fileext/utils/FileExt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/ttrzcinski/fileext/utils/FileExt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/ttrzcinski/fileext/utils/ParamCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/ttrzcinski/fileext/utils/ParamCheck.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,7 +34,11 @@
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1Pk2mI8373vJIAVrXe6Ni2D41dZ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="true" />
     <property name="Repository.Attach.JavaDocs" value="true" />
@@ -46,7 +50,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="last.edited.regexp" value="c:\home\" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../vmodmust" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/org/ttrzcinski/fileext/utils/ParamCheck.java" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -57,6 +61,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/src/org/ttrzcinski/fileext/utils/ParamCheck.java" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -214,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566756527688</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Fixed FileExt to tops 80 characters.&#10;Fixed order of CRUD methods in Mount.">
+      <created>1566757512555</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1566757512555</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,10 +246,12 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Adedd to StringFix pad methods.&#10;Simplified ParamCheck and added missing JavaDocs. &#10;Added package-info.&#10;Added OS checks in OSInfo.&#10;Extended JSONOutput with missing JavaDocs.&#10;Extended FileExt with missing JavaDocs." />
     <MESSAGE value="Simplified Mounts.&#10;Changed Mount to Singleton.&#10;Removed builder from Mount.&#10;Remvoed usage of builder." />
     <MESSAGE value="Added unit tests for Mounts and JSONOutput." />
     <MESSAGE value="Added check of param's path is independent from OS.&#10;Added coverage of author." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added check of param's path is independent from OS.&#10;Added coverage of author." />
+    <MESSAGE value="Fixed FileExt to tops 80 characters.&#10;Fixed order of CRUD methods in Mount." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed FileExt to tops 80 characters.&#10;Fixed order of CRUD methods in Mount." />
   </component>
 </project>

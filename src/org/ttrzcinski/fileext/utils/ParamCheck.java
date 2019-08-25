@@ -1,9 +1,10 @@
 package org.ttrzcinski.fileext.utils;
 
+
+import java.util.regex.Pattern;
 import java.nio.file.InvalidPathException;
 import java.nio.file.Paths;
 import java.util.Set;
-import java.util.regex.Pattern;
 
 /**
  * Checks given parameters.
@@ -53,11 +54,12 @@ public final class ParamCheck {
         if (!isSet(path)) {
             return false;
         }
-        String fixedPAth = path.trim();
+        final String fixedPath = path.trim();
         // Initialize pattern matcher
         initFilePathPattern();
         // Check if 2nd check as instance
-        return filePathPattern.matcher(fixedPAth).matches() && isPathWithTry(fixedPAth);
+        return filePathPattern.matcher(fixedPath).matches()
+                && isPathWithTry(fixedPath);
     }
 
     /**
@@ -68,7 +70,9 @@ public final class ParamCheck {
      */
     public static boolean isPathWithTry(final String path) {
         var result = false;
-        if (!isSet(path)) { return result; }
+        if (!isSet(path)) {
+            return result;
+        }
         final String fixedPath = path.trim().toLowerCase();
         // Check, if it is a home or root
         if (FIXED_PATHS.contains(fixedPath)) {
@@ -155,4 +159,44 @@ public final class ParamCheck {
         return param != null;
     }
 
+    /**
+     * Checks, if given value is positive.
+     *
+     * @param given given value
+     * @return true means it is, false otherwise
+     */
+    public static boolean isPositive(final int given) {
+        return given > -1;
+    }
+
+    /**
+     * Checks, if given value is in between given limits.
+     *
+     * @param given      given value to check
+     * @param leftLimit  left side limit
+     * @param rightLimit right side limit
+     * @return true means, if is between those two, false otherwise
+     */
+    public static boolean inBetween(final int given,
+                                    final int leftLimit,
+                                    final int rightLimit) {
+        return leftLimit <= given && given <= rightLimit;
+    }
+
+    /**
+     * Validates, if given string is run argument.
+     *
+     * @param given given argument
+     * @return true means it is, false otherwise
+     */
+    public static boolean isArgument(final String given) {
+        boolean result = false;
+        if (isSet(given)) {
+            final String passedValue = given.trim();
+            if (passedValue.startsWith("-")) {
+                result = !passedValue.startsWith("---");
+            }
+        }
+        return result;
+    }
 }

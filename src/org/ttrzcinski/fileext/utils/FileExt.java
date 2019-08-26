@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+
 /**
  * File (Util Methods) Extension.
  *
@@ -160,15 +161,17 @@ public class FileExt {
      * @return handle to the file
      */
     public static File create(Path path) {
-        File file = new File(path.toString());
+        var file = new File(path.toString());
+        var result = false;
         if (!file.exists()) {
             try {
-                file.createNewFile();
+                result = file.createNewFile();
             } catch (IOException e) {
+                result = false;
                 file = null;
             }
         }
-        return file;
+        return result ? file : null;
     }
 
     /**
@@ -178,7 +181,7 @@ public class FileExt {
      * @return file, if path is right, null otherwise
      */
     public static File read(@NotNull final Path keptPath) {
-        return keptPath != null ? new File(keptPath.toAbsolutePath().toString()) : null;
+        return new File(keptPath.toAbsolutePath().toString());
     }
 
     /**
@@ -208,8 +211,7 @@ public class FileExt {
      * @return removed file
      */
     public static File remove(Path path) {
-        File file = new File(path.toString());
-        return remove(file);
+        return remove(new File(path.toString()));
     }
 
     /**
@@ -219,10 +221,6 @@ public class FileExt {
      * @return removed file
      */
     public static File remove(File file) {
-        if (file.exists()) {
-            file.delete();
-            return file;
-        }
-        return null;
+        return file.exists() && file.delete() ? file : null;
     }
 }

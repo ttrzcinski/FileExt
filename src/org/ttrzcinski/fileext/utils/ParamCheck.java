@@ -1,8 +1,8 @@
 package org.ttrzcinski.fileext.utils;
 
 
-import java.util.regex.Pattern;
 import java.nio.file.InvalidPathException;
+import java.util.regex.Pattern;
 import java.nio.file.Paths;
 import java.util.Set;
 

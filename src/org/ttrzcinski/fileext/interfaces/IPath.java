@@ -6,6 +6,8 @@ import java.util.List;
 
 /**
  * Forces usage of common set of directory and files processing methods.
+ *
+ * @author <a href="mailto:trzcinski.tomasz.1988@gmail.com">Tomasz T.</a>
  */
 public interface IPath {
 

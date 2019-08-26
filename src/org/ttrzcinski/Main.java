@@ -4,6 +4,8 @@ import org.ttrzcinski.fileext.Mounts;
 
 /**
  * REMOVE AFTER FINISH - Just class to run as application with arguments.
+ *
+ * @author <a href="mailto:trzcinski.tomasz.1988@gmail.com">Tomasz T.</a>
  */
 public final class Main {
 
@@ -21,11 +23,8 @@ public final class Main {
      * @param args given application arguments
      */
     public static void main(final String[] args) {
-        final Mounts mounts = new Mounts.MountsBuilder()
-                .mount("all", "./usr")
-                .mount("maven", "./m2")
-                .unmount("maven")
-                .build();
+        final Mounts mounts = Mounts.getInstance()
+                .withMount("mvn", "~/.m2");
         mounts.toConsole();
         System.out.println("---");
         System.out.println(mounts.toJSON());

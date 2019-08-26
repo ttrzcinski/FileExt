@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eb383e86-9b1d-4575-8268-31a342df76a7" name="Default Changelist" comment="" />
+    <list default="true" id="eb383e86-9b1d-4575-8268-31a342df76a7" name="Default Changelist" comment="Ignored out catalog.">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/ttrzcinski/fileext/utils/ParamCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/ttrzcinski/fileext/utils/ParamCheck.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,27 +18,39 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="TestMe with JUnit5 &amp; Mockito" />
-        <option value="Interface" />
+        <option value="module-info" />
         <option value="Class" />
+        <option value="Interface" />
+        <option value="JUnit5 Test Class" />
+        <option value="package-info" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1Pk2mI8373vJIAVrXe6Ni2D41dZ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="true" />
     <property name="Repository.Attach.JavaDocs" value="true" />
     <property name="Repository.Attach.Sources" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
+    <property name="last.edited.regexp" value="c:\home\" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/org/ttrzcinski/fileext/utils/ParamCheck.java" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -45,10 +61,12 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/src/org/ttrzcinski/fileext/utils/ParamCheck.java" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
       <recent name="org.ttrzcinski.fileext.utils" />
+      <recent name="org.ttrzcinski.fileext" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.ttrzcinski.fileext.utils" />
@@ -69,13 +87,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="org.ttrzcinski.Main" />
+  <component name="RunManager" selected="JUnit.All in fileExt (1)">
+    <configuration name="All in fileExt (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="fileExt" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -88,14 +104,66 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="JSONOutputTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fileExt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.ttrzcinski.fileext.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.ttrzcinski.fileext.utils" />
+      <option name="MAIN_CLASS_NAME" value="org.ttrzcinski.fileext.utils.JSONOutputTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MountsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fileExt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.ttrzcinski.fileext.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.ttrzcinski.fileext" />
+      <option name="MAIN_CLASS_NAME" value="org.ttrzcinski.fileext.MountsTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MountsTest.getInstance_notNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="fileExt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.ttrzcinski.fileext.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.ttrzcinski.fileext" />
+      <option name="MAIN_CLASS_NAME" value="org.ttrzcinski.fileext.MountsTest" />
+      <option name="METHOD_NAME" value="getInstance_notNull" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.MountsTest" />
+      <item itemvalue="JUnit.MountsTest.getInstance_notNull" />
+      <item itemvalue="JUnit.JSONOutputTest" />
       <item itemvalue="JUnit.All in fileExt" />
+      <item itemvalue="JUnit.All in fileExt (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.All in fileExt (1)" />
         <item itemvalue="JUnit.All in fileExt" />
+        <item itemvalue="JUnit.JSONOutputTest" />
+        <item itemvalue="JUnit.MountsTest" />
+        <item itemvalue="JUnit.MountsTest.getInstance_notNull" />
       </list>
     </recent_temporary>
   </component>
@@ -116,9 +184,74 @@
       <workItem from="1566411602162" duration="6269000" />
       <workItem from="1566419181557" duration="2702000" />
     </task>
+    <task id="LOCAL-00001" summary="Adedd to StringFix pad methods.&#10;Simplified ParamCheck and added missing JavaDocs. &#10;Added package-info.&#10;Added OS checks in OSInfo.&#10;Extended JSONOutput with missing JavaDocs.&#10;Extended FileExt with missing JavaDocs.">
+      <created>1566740995217</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1566740995217</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Simplified Mounts.&#10;Changed Mount to Singleton.&#10;Removed builder from Mount.&#10;Remvoed usage of builder.">
+      <created>1566741217761</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1566741217761</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Simplified Mounts.&#10;Changed Mount to Singleton.&#10;Removed builder from Mount.&#10;Remvoed usage of builder.">
+      <created>1566741243705</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1566741243705</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added unit tests for Mounts and JSONOutput.">
+      <created>1566750215972</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1566750215972</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added check of param's path is independent from OS.&#10;Added coverage of author.">
+      <created>1566756527688</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1566756527688</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Fixed FileExt to tops 80 characters.&#10;Fixed order of CRUD methods in Mount.">
+      <created>1566757512555</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1566757512555</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Adedd to StringFix pad methods.&#10;Simplified ParamCheck and added missing JavaDocs. &#10;Added package-info.&#10;Added OS checks in OSInfo.&#10;Extended JSONOutput with missing JavaDocs.&#10;Extended FileExt with missing JavaDocs." />
+    <MESSAGE value="Simplified Mounts.&#10;Changed Mount to Singleton.&#10;Removed builder from Mount.&#10;Remvoed usage of builder." />
+    <MESSAGE value="Added unit tests for Mounts and JSONOutput." />
+    <MESSAGE value="Added check of param's path is independent from OS.&#10;Added coverage of author." />
+    <MESSAGE value="Fixed FileExt to tops 80 characters.&#10;Fixed order of CRUD methods in Mount." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed FileExt to tops 80 characters.&#10;Fixed order of CRUD methods in Mount." />
   </component>
 </project>

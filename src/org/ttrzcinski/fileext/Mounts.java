@@ -83,9 +83,9 @@ public class Mounts implements I2JSON, I2Console, IMounting<Mount> {
      * @param name given name
      * @return true means it exists, false otherwise
      */
-    public static final boolean contains(@NotNull final String name) {
+    public static boolean contains(@NotNull final String name) {
         String fixed = StringFix.simple(name);
-        return fixed.length() > 0 ? mounts.containsKey(fixed) : false;
+        return fixed.length() > 0 && mounts.containsKey(fixed);
     }
 
     /**
@@ -167,7 +167,7 @@ public class Mounts implements I2JSON, I2Console, IMounting<Mount> {
      */
     public void mount(@NotNull final String name, @NotNull final Path path) {
         String fixed = StringFix.simple(name);
-        if (fixed.length() > 0 && path != null) {
+        if (fixed.length() > 0) {
             mounts.put(name.toLowerCase(), Mount.of(path));
         }
     }
@@ -204,7 +204,7 @@ public class Mounts implements I2JSON, I2Console, IMounting<Mount> {
      * @param name name of mount
      * @return mount, if found, null otherwise
      */
-    public static final Mount get(String name) {
+    public static Mount get(String name) {
         String fixed = StringFix.simple(name);
         return contains(fixed) ? mounts.get(fixed) : null;
     }
@@ -214,10 +214,10 @@ public class Mounts implements I2JSON, I2Console, IMounting<Mount> {
      *
      * @return map of mounts
      */
-    public static final Map<String, Mount> getAll() {
+    public static Map<String, Mount> getAll() {
         return mounts.entrySet().stream()
                 .collect(
-                        Collectors.toMap(e -> e.getKey(), e -> e.getValue())
+                        Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue)
                 );
     }
 

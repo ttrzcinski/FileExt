@@ -69,23 +69,22 @@ public final class ParamCheck {
      * @return true means it's valid, false otherwise
      */
     public static boolean isPathWithTry(final String path) {
-        var result = false;
         if (!isSet(path)) {
-            return result;
+            return false;
         }
         final String fixedPath = path.trim().toLowerCase();
         // Check, if it is a home or root
-        if (FIXED_PATHS.contains(fixedPath)) {
-            result = true;
-        } else {
+        if (!FIXED_PATHS.contains(fixedPath)) {
+            var result = true;
             try {
                 Paths.get(fixedPath);
-                result = true;
             } catch (InvalidPathException | NullPointerException ex) {
                 result = false;
             }
+            return result;
+        } else {
+            return false;
         }
-        return result;
     }
 
     /**

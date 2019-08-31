@@ -46,7 +46,9 @@ public final class StringFix {
      */
     public static String padRight(@NotNull final String given,
                                   final int wantedLength) {
-        return String.format(String.format("%%-%ds", wantedLength), given);
+        return wantedLength >= 1 ?
+                String.format(String.format("%%-%ds", wantedLength), given) :
+                given;
     }
 
     /**
@@ -58,6 +60,8 @@ public final class StringFix {
      */
     public static String padLeft(@NotNull final String given,
                                  final int wantedLength) {
-        return String.format(String.format("%%%ds", wantedLength), given);
+        return wantedLength >= 1 ?
+                String.format(String.format("%%%ds", wantedLength), given) :
+                given;
     }
 }

@@ -1,6 +1,7 @@
 package org.ttrzcinski;
 
 import org.ttrzcinski.fileext.Mounts;
+import org.ttrzcinski.fileext.utils.ProcessingSpinner;
 
 /**
  * REMOVE AFTER FINISH - Just class to run as application with arguments.
@@ -28,5 +29,10 @@ public final class Main {
         mounts.toConsole();
         System.out.println("---");
         System.out.println(mounts.toJSON());
+        try {
+            ProcessingSpinner.process(100, "Count to 100.");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
